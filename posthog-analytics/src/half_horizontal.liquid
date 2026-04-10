@@ -1,0 +1,58 @@
+<script src="https://trmnl.com/js/highcharts/12.3.0/highcharts.js"></script>
+
+<div id="chart-wau"></div>
+<div id="chart-loans"></div>
+
+<div class="title_bar">
+  <span class="title">PostHog Analytics</span>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    Highcharts.setOptions({
+      chart: { animation: false, backgroundColor: 'transparent', style: { fontFamily: 'Inter, sans-serif' } },
+      title: { text: null },
+      plotOptions: { series: { animation: false, enableMouseTracking: false } },
+      tooltip: { enabled: false },
+      credits: { enabled: false }
+    });
+
+    // -- Weekly Active Users --
+    var wauLabels = [{% for l in IDX_1.results[0].result[0].labels %}"{{ l }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var wauValues = [{% for v in IDX_1.results[0].result[0].data %}{{ v }}{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var wauRange = wauLabels.length > 0 ? wauLabels[0] + ' → ' + wauLabels[wauLabels.length - 1] : '';
+
+    Highcharts.chart('chart-wau', {
+      chart: { type: 'area', height: 145, spacing: [2, 10, 5, 10] },
+      subtitle: { text: 'Weekly Active Users  · ' + wauRange, align: 'left',
+        style: { fontSize: '12px', fontWeight: 'bold' } },
+      xAxis: { categories: wauLabels, labels: { enabled: false },
+        lineWidth: 1, lineColor: '#000', tickWidth: 0 },
+      yAxis: { title: { text: null }, labels: { style: { fontSize: '9px', color: '#000' } },
+        gridLineDashStyle: 'shortdot', gridLineColor: '#999', gridLineWidth: 1, tickAmount: 4 },
+      legend: { enabled: false },
+      plotOptions: { area: { lineWidth: 2, marker: { enabled: false },
+        fillColor: { linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [[0, 'rgba(0,0,0,0.25)'], [1, 'rgba(0,0,0,0)']] } } },
+      series: [{ name: 'WAU', data: wauValues, color: '#000000' }]
+    });
+
+    // -- Loan Applications --
+    var loanValues = [{% for v in IDX_2.results[0].result[0].data %}{{ v }}{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var loanLabels = [{% for l in IDX_2.results[0].result[0].labels %}"{{ l }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var loanTotal = loanValues.length > 0 ? loanValues.reduce(function(a, b) { return a + b; }, 0) : 0;
+
+    Highcharts.chart('chart-loans', {
+      chart: { type: 'column', height: 50, spacing: [2, 10, 5, 10] },
+      subtitle: { text: 'Loan Applications (30d)  · Total: ' + loanTotal, align: 'left',
+        style: { fontSize: '12px', fontWeight: 'bold' } },
+      xAxis: { categories: loanLabels, labels: { enabled: false },
+        lineWidth: 1, lineColor: '#000', tickWidth: 0 },
+      yAxis: { title: { text: null }, labels: { style: { fontSize: '9px', color: '#000' } },
+        gridLineWidth: 0, tickAmount: 2 },
+      legend: { enabled: false },
+      plotOptions: { column: { borderWidth: 0 } },
+      series: [{ name: 'Applications', data: loanValues, color: '#000000' }]
+    });
+  });
+</script>

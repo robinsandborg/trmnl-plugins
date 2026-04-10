@@ -1,0 +1,49 @@
+# Changes to this file will be overwritten by `trmnlp pull`
+# https://docs.trmnl.com/go/plugins/custom-form-fields
+# https://docs.trmnl.com/go/plugins/private
+#
+# Setup: Create 3 saved insights in PostHog, then enter their IDs below.
+#   1. Lifecycle insight ($pageview, weekly, last 90 days)
+#   2. Trends insight ($pageview, weekly unique users, last 90 days)
+#   3. Trends insight (loan_application_created, daily, last 30 days)
+
+name: PostHog Analytics
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+strategy: polling
+polling_verb: get
+polling_url: |
+  {{ posthog_host }}/api/projects/{{ posthog_project_id }}/insights/?short_id={{ lifecycle_insight_id }}&refresh=true
+  {{ posthog_host }}/api/projects/{{ posthog_project_id }}/insights/?short_id={{ wau_insight_id }}&refresh=true
+  {{ posthog_host }}/api/projects/{{ posthog_project_id }}/insights/?short_id={{ loan_insight_id }}&refresh=true
+polling_headers: 'authorization=Bearer {{ posthog_api_key }}'
+refresh_interval: 60
+id: posthog-analytics
+
+custom_fields:
+  - keyname: posthog_api_key
+    field_type: text
+    name: PostHog API Key
+    description: Personal API key (phx_...)
+  - keyname: posthog_host
+    field_type: text
+    name: PostHog Host
+    description: PostHog instance URL
+    default: 'https://us.posthog.com'
+  - keyname: posthog_project_id
+    field_type: text
+    name: PostHog Project ID
+    description: Your PostHog project ID
+  - keyname: lifecycle_insight_id
+    field_type: text
+    name: Lifecycle Insight ID
+    description: Saved insight ID for Growth Accounting (lifecycle)
+  - keyname: wau_insight_id
+    field_type: text
+    name: WAU Insight ID
+    description: Saved insight ID for Weekly Active Users
+  - keyname: loan_insight_id
+    field_type: text
+    name: Loan Insight ID
+    description: Saved insight ID for loan_application_created events

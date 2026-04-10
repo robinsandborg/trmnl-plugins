@@ -1,0 +1,36 @@
+<script src="https://trmnl.com/js/highcharts/12.3.0/highcharts.js"></script>
+
+<div id="chart-wau"></div>
+
+<div class="title_bar">
+  <span class="title">PostHog</span>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    Highcharts.setOptions({
+      chart: { animation: false, backgroundColor: 'transparent', style: { fontFamily: 'Inter, sans-serif' } },
+      title: { text: null },
+      plotOptions: { series: { animation: false, enableMouseTracking: false } },
+      tooltip: { enabled: false },
+      credits: { enabled: false }
+    });
+
+    var wauValues = [{% for v in IDX_1.results[0].result[0].data %}{{ v }}{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var latest = wauValues.length > 0 ? wauValues[wauValues.length - 1] : 0;
+
+    Highcharts.chart('chart-wau', {
+      chart: { type: 'area', height: 195, spacing: [2, 5, 5, 5] },
+      subtitle: { text: 'WAU: ' + latest.toLocaleString(), align: 'left',
+        style: { fontSize: '13px', fontWeight: 'bold' } },
+      xAxis: { labels: { enabled: false }, lineWidth: 1, lineColor: '#000', tickWidth: 0 },
+      yAxis: { title: { text: null }, labels: { style: { fontSize: '9px', color: '#000' } },
+        gridLineDashStyle: 'shortdot', gridLineColor: '#999', gridLineWidth: 1, tickAmount: 3 },
+      legend: { enabled: false },
+      plotOptions: { area: { lineWidth: 2, marker: { enabled: false },
+        fillColor: { linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [[0, 'rgba(0,0,0,0.25)'], [1, 'rgba(0,0,0,0)']] } } },
+      series: [{ name: 'WAU', data: wauValues, color: '#000000' }]
+    });
+  });
+</script>
