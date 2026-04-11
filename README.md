@@ -32,6 +32,7 @@ Each widget lives in its own directory and is intended to be self-contained.
 
 | Widget | Status | Notes |
 |---|---|---|
+| [`google-calendar-week`](./google-calendar-week) | active | Weekly Google Calendar view for LaraPaper using a private iCal feed |
 | [`posthog-analytics`](./posthog-analytics) | active | PostHog analytics dashboards for e-ink displays |
 
 ## How This Repo Fits Together

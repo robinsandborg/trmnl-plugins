@@ -1,0 +1,693 @@
+<div class="view view--{{ size }} calendar-view">
+  <div class="layout layout--col calendar-layout">
+    <div class="calendar-shell">
+      <div class="calendar-heading">
+        <span class="value value--small calendar-month" id="calendar-month-label">Kalender</span>
+      </div>
+
+      <div class="calendar-frame">
+        <div class="calendar-axis">
+          <div class="calendar-axis-top" aria-hidden="true"></div>
+          <div class="calendar-all-day-spacer" id="calendar-all-day-spacer" aria-hidden="true"></div>
+          <div class="calendar-time-axis" id="calendar-time-axis"></div>
+        </div>
+
+        <div class="calendar-main">
+          <div class="calendar-header-grid" id="calendar-header-grid"></div>
+          <div class="calendar-all-day" id="calendar-all-day"></div>
+          <div class="calendar-grid" id="calendar-grid">
+            <div class="calendar-grid-lines" id="calendar-grid-lines"></div>
+            <div class="calendar-column-overlay" id="calendar-column-overlay"></div>
+            <div class="calendar-events-layer" id="calendar-events-layer"></div>
+            <div class="calendar-empty hidden" id="calendar-empty">Ingen avtaler denne uken</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .calendar-view {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .calendar-layout {
+    width: 100%;
+    height: 100%;
+    padding: 8px 10px 10px;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .calendar-shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 8px;
+    height: 100%;
+    width: 100%;
+    min-height: 0;
+    font-family: sans-serif;
+  }
+
+  .calendar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 28px;
+  }
+
+  .calendar-month {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .calendar-frame {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .calendar-axis {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .calendar-axis-top {
+    height: 56px;
+    flex: 0 0 56px;
+  }
+
+  .calendar-all-day-spacer {
+    min-height: 26px;
+  }
+
+  .calendar-time-axis {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .calendar-time-axis-label {
+    position: absolute;
+    right: 4px;
+    transform: translateY(-50%);
+    font-size: 11px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.78);
+    white-space: nowrap;
+  }
+
+  .calendar-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .calendar-header-grid,
+  .calendar-all-day,
+  .calendar-column-overlay {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .calendar-header-grid {
+    height: 56px;
+    border-top: 2px solid #111;
+    border-bottom: 1px solid #111;
+  }
+
+  .calendar-header-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-left: 1px solid rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.02);
+    white-space: nowrap;
+  }
+
+  .calendar-header-cell:first-child {
+    border-left: 0;
+  }
+
+  .calendar-header-cell.is-today {
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .calendar-header-cell.is-past {
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .calendar-all-day {
+    position: relative;
+    min-height: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background:
+      linear-gradient(to right, rgba(0, 0, 0, 0.18) 1px, transparent 1px) 0 0 / calc(100% / 7) 100%;
+  }
+
+  .calendar-all-day::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, transparent calc(100% - 1px), rgba(0, 0, 0, 0.18) calc(100% - 1px));
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .calendar-all-day-past {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.04);
+    pointer-events: none;
+  }
+
+  .calendar-grid {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .calendar-grid-lines,
+  .calendar-column-overlay,
+  .calendar-events-layer {
+    position: absolute;
+    inset: 0;
+  }
+
+  .calendar-grid-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px dotted rgba(0, 0, 0, 0.34);
+  }
+
+  .calendar-column {
+    position: relative;
+    border-left: 1px solid rgba(0, 0, 0, 0.18);
+  }
+
+  .calendar-column:first-child {
+    border-left: 0;
+  }
+
+  .calendar-column.is-past {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .calendar-column.is-today {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.04), transparent 28%);
+  }
+
+  .calendar-event,
+  .calendar-strip-event {
+    position: absolute;
+    border: 1px solid #111;
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .calendar-event-content,
+  .calendar-strip-event-content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .calendar-event {
+    min-height: 14px;
+    padding: 3px 4px 2px;
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .calendar-event-time {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+  }
+
+  .calendar-event-content {
+    -webkit-line-clamp: 3;
+  }
+
+  .calendar-event-content--compact {
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+    line-height: 1.1;
+  }
+
+  .calendar-event.is-past,
+  .calendar-strip-event.is-past {
+    background: rgba(0, 0, 0, 0.45);
+    border-color: rgba(0, 0, 0, 0.52);
+  }
+
+  .calendar-strip-event {
+    display: flex;
+    align-items: center;
+    min-height: 18px;
+    padding: 0 6px;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .calendar-strip-event-content {
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+  }
+
+  .calendar-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.58);
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .calendar-empty.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rawEvents = {{ data.ical | json }} || [];
+    var trmnlContext = {{ trmnl | json }};
+    var monthNames = ['Januar', 'Februar', 'Mars', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Desember'];
+    var dayNames = ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'];
+    var dayMs = 24 * 60 * 60 * 1000;
+    var headerGrid = document.getElementById('calendar-header-grid');
+    var allDayLayer = document.getElementById('calendar-all-day');
+    var timeAxis = document.getElementById('calendar-time-axis');
+    var allDaySpacer = document.getElementById('calendar-all-day-spacer');
+    var grid = document.getElementById('calendar-grid');
+    var gridLines = document.getElementById('calendar-grid-lines');
+    var columnOverlay = document.getElementById('calendar-column-overlay');
+    var eventsLayer = document.getElementById('calendar-events-layer');
+    var emptyState = document.getElementById('calendar-empty');
+    var monthLabel = document.getElementById('calendar-month-label');
+    var timestampUtc = trmnlContext && trmnlContext.system ? Number(trmnlContext.system.timestamp_utc) : NaN;
+    var now = Number.isFinite(timestampUtc) ? new Date(timestampUtc * 1000) : new Date();
+
+    function startOfDay(date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    function addDays(date, days) {
+      var copy = new Date(date.getTime());
+      copy.setDate(copy.getDate() + days);
+      return copy;
+    }
+
+    function startOfWeek(date) {
+      var base = startOfDay(date);
+      var day = base.getDay();
+      var diff = day === 0 ? -6 : 1 - day;
+      return addDays(base, diff);
+    }
+
+    function isNearMidnight(date) {
+      var minutes = date.getHours() * 60 + date.getMinutes();
+      return minutes <= 120;
+    }
+
+    function isWholeDayDuration(start, end) {
+      var diff = end.getTime() - start.getTime();
+      return diff >= dayMs && diff % dayMs === 0;
+    }
+
+    function intersectsWeek(start, end, weekStart, weekEnd) {
+      return end.getTime() > weekStart.getTime() && start.getTime() < weekEnd.getTime();
+    }
+
+    function normalizeEvent(raw, index) {
+      if (!raw || !raw.DTSTART) {
+        return null;
+      }
+
+      var start = new Date(raw.DTSTART);
+      var end = raw.DTEND ? new Date(raw.DTEND) : new Date(start.getTime() + (60 * 60 * 1000));
+
+      if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+        return null;
+      }
+
+      if (end.getTime() <= start.getTime()) {
+        end = new Date(start.getTime() + (30 * 60 * 1000));
+      }
+
+      var visibleEnd = new Date(end.getTime() - 1);
+      var crossesDayBoundary = startOfDay(start).getTime() !== startOfDay(visibleEnd).getTime();
+      var allDay = isWholeDayDuration(start, end) && isNearMidnight(start) && isNearMidnight(end);
+
+      return {
+        id: 'evt-' + index,
+        summary: raw.SUMMARY || 'Uten tittel',
+        location: raw.LOCATION || '',
+        start: start,
+        end: end,
+        visibleEnd: visibleEnd,
+        allDay: allDay,
+        strip: allDay || crossesDayBoundary
+      };
+    }
+
+    function clipStripEvent(event, weekStart, weekEnd) {
+      var clipStart = event.start.getTime() < weekStart.getTime() ? weekStart : event.start;
+      var clipEnd = event.visibleEnd.getTime() >= weekEnd.getTime() ? new Date(weekEnd.getTime() - 1) : event.visibleEnd;
+      var startIndex = Math.floor((startOfDay(clipStart).getTime() - weekStart.getTime()) / dayMs);
+      var endIndex = Math.floor((startOfDay(clipEnd).getTime() - weekStart.getTime()) / dayMs);
+
+      return {
+        source: event,
+        startIndex: Math.max(0, Math.min(6, startIndex)),
+        endIndex: Math.max(0, Math.min(6, endIndex)),
+        past: event.end.getTime() <= now.getTime()
+      };
+    }
+
+    function assignStripLanes(events) {
+      var lanes = [];
+
+      events.forEach(function(event) {
+        var laneIndex = 0;
+
+        while (true) {
+          if (!lanes[laneIndex]) {
+            lanes[laneIndex] = [];
+          }
+
+          var conflict = lanes[laneIndex].some(function(placed) {
+            return !(event.endIndex < placed.startIndex || event.startIndex > placed.endIndex);
+          });
+
+          if (!conflict) {
+            event.lane = laneIndex;
+            lanes[laneIndex].push(event);
+            break;
+          }
+
+          laneIndex += 1;
+        }
+      });
+
+      return Math.max(1, lanes.length);
+    }
+
+    function buildTimedClusters(events) {
+      var clusters = [];
+      var current = null;
+
+      events.forEach(function(event) {
+        if (!current || event.start.getTime() >= current.endTime) {
+          current = { events: [event], endTime: event.end.getTime() };
+          clusters.push(current);
+          return;
+        }
+
+        current.events.push(event);
+        current.endTime = Math.max(current.endTime, event.end.getTime());
+      });
+
+      clusters.forEach(function(cluster) {
+        var active = [];
+        var usedLanes = [];
+
+        cluster.events.forEach(function(event) {
+          active = active.filter(function(activeEvent) {
+            return activeEvent.end.getTime() > event.start.getTime();
+          });
+
+          usedLanes = active.map(function(activeEvent) {
+            return activeEvent.lane;
+          });
+
+          var lane = 0;
+          while (usedLanes.indexOf(lane) !== -1) {
+            lane += 1;
+          }
+
+          event.lane = lane;
+          active.push(event);
+        });
+
+        cluster.laneCount = cluster.events.reduce(function(maxLane, event) {
+          return Math.max(maxLane, event.lane + 1);
+        }, 1);
+
+        cluster.events.forEach(function(event) {
+          event.clusterLaneCount = cluster.laneCount;
+        });
+      });
+    }
+
+    function hourFloat(date) {
+      return date.getHours() + (date.getMinutes() / 60);
+    }
+
+    function padHour(hour) {
+      return (hour < 10 ? '0' : '') + hour;
+    }
+
+    function formatTime(date) {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      return (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+    }
+
+    function clearNode(node) {
+      while (node.firstChild) {
+        node.removeChild(node.firstChild);
+      }
+    }
+
+    function createDiv(className, text) {
+      var element = document.createElement('div');
+      if (className) {
+        element.className = className;
+      }
+      if (typeof text === 'string') {
+        element.textContent = text;
+      }
+      return element;
+    }
+
+    function renderPastOverlays(container, todayStart, height) {
+      for (var index = 0; index < 7; index += 1) {
+        var dayDate = addDays(weekStart, index);
+        if (dayDate.getTime() >= todayStart.getTime()) {
+          continue;
+        }
+
+        var overlay = createDiv('calendar-all-day-past');
+        overlay.style.left = (index * (100 / 7)) + '%';
+        overlay.style.width = (100 / 7) + '%';
+        overlay.style.height = height + 'px';
+        container.appendChild(overlay);
+      }
+    }
+
+    var weekStart = startOfWeek(now);
+    var weekEnd = addDays(weekStart, 7);
+    var todayStart = startOfDay(now);
+
+    monthLabel.textContent = monthNames[now.getMonth()];
+
+    var events = (Array.isArray(rawEvents) ? rawEvents : [])
+      .map(normalizeEvent)
+      .filter(function(event) {
+        return event && intersectsWeek(event.start, event.end, weekStart, weekEnd);
+      })
+      .sort(function(left, right) {
+        return left.start.getTime() - right.start.getTime();
+      });
+
+    clearNode(headerGrid);
+    clearNode(allDayLayer);
+    clearNode(timeAxis);
+    clearNode(gridLines);
+    clearNode(columnOverlay);
+    clearNode(eventsLayer);
+
+    for (var dayIndex = 0; dayIndex < 7; dayIndex += 1) {
+      var date = addDays(weekStart, dayIndex);
+      var headerCell = createDiv('calendar-header-cell', dayNames[date.getDay()] + ' ' + date.getDate() + '.');
+
+      if (date.getTime() < todayStart.getTime()) {
+        headerCell.classList.add('is-past');
+      } else if (date.getTime() === todayStart.getTime()) {
+        headerCell.classList.add('is-today');
+      }
+
+      headerGrid.appendChild(headerCell);
+
+      var column = createDiv('calendar-column');
+      if (date.getTime() < todayStart.getTime()) {
+        column.classList.add('is-past');
+      } else if (date.getTime() === todayStart.getTime()) {
+        column.classList.add('is-today');
+      }
+      columnOverlay.appendChild(column);
+    }
+
+    var stripEvents = events
+      .filter(function(event) { return event.strip; })
+      .map(function(event) { return clipStripEvent(event, weekStart, weekEnd); })
+      .sort(function(left, right) {
+        if (left.startIndex !== right.startIndex) {
+          return left.startIndex - right.startIndex;
+        }
+        return right.endIndex - left.endIndex;
+      });
+
+    var stripLaneCount = assignStripLanes(stripEvents);
+    var stripLaneHeight = 20;
+    var stripInset = 2;
+    var stripHeight = 18;
+    var allDayHeight = Math.max(22, stripLaneCount * stripLaneHeight + (stripInset * 2));
+    allDayLayer.style.height = allDayHeight + 'px';
+    allDaySpacer.style.height = allDayHeight + 'px';
+    renderPastOverlays(allDayLayer, todayStart, allDayHeight);
+
+    stripEvents.forEach(function(event) {
+      var stripNode = createDiv('calendar-strip-event' + (event.past ? ' is-past' : ''));
+      var content = createDiv('calendar-strip-event-content', event.source.summary);
+      var width = ((event.endIndex - event.startIndex) + 1) * (100 / 7);
+
+      stripNode.style.left = (event.startIndex * (100 / 7)) + '%';
+      stripNode.style.top = (event.lane * stripLaneHeight + stripInset) + 'px';
+      stripNode.style.width = 'calc(' + width + '% - 6px)';
+      stripNode.style.height = stripHeight + 'px';
+      stripNode.appendChild(content);
+      allDayLayer.appendChild(stripNode);
+    });
+
+    var timedByDay = [[], [], [], [], [], [], []];
+
+    events.filter(function(event) {
+      return !event.strip;
+    }).forEach(function(event) {
+      var day = Math.floor((startOfDay(event.start).getTime() - weekStart.getTime()) / dayMs);
+      if (day >= 0 && day < 7) {
+        timedByDay[day].push({
+          id: event.id,
+          summary: event.summary,
+          start: event.start,
+          end: event.end,
+          past: event.end.getTime() <= now.getTime()
+        });
+      }
+    });
+
+    var allTimed = [];
+    timedByDay.forEach(function(dayEvents) {
+      dayEvents.sort(function(left, right) {
+        return left.start.getTime() - right.start.getTime();
+      });
+      buildTimedClusters(dayEvents);
+      allTimed = allTimed.concat(dayEvents);
+    });
+
+    var startHour = 9;
+    var endHour = 20;
+
+    if (allTimed.length > 0) {
+      startHour = Math.min(9, Math.floor(allTimed.reduce(function(minimum, event) {
+        return Math.min(minimum, hourFloat(event.start));
+      }, 24)));
+
+      endHour = Math.max(20, Math.ceil(allTimed.reduce(function(maximum, event) {
+        return Math.max(maximum, hourFloat(event.end));
+      }, 0)));
+    }
+
+    var totalHours = Math.max(1, endHour - startHour);
+    var timedHeight = grid.clientHeight;
+    var hourBandHeight = timedHeight / totalHours;
+
+    if (timedHeight < 120) {
+      timedHeight = 300;
+      grid.style.height = timedHeight + 'px';
+    }
+
+    for (var hourIndex = 0; hourIndex <= totalHours; hourIndex += 1) {
+      var ratio = hourIndex / totalHours;
+      var lineTop = ratio * timedHeight;
+      var line = createDiv('calendar-grid-line');
+      line.style.top = lineTop + 'px';
+      gridLines.appendChild(line);
+
+      if (hourIndex < totalHours) {
+        var hour = startHour + hourIndex;
+        var hourLabel = createDiv('calendar-time-axis-label', padHour(hour));
+        hourLabel.style.top = (lineTop + (hourBandHeight / 2) + 4) + 'px';
+        timeAxis.appendChild(hourLabel);
+      }
+    }
+
+    allTimed.forEach(function(event) {
+      var minutesFromStart = (hourFloat(event.start) - startHour) * 60;
+      var durationMinutes = Math.max(15, (event.end.getTime() - event.start.getTime()) / (1000 * 60));
+      var dayIndexForEvent = Math.floor((startOfDay(event.start).getTime() - weekStart.getTime()) / dayMs);
+      var columnWidth = 100 / 7;
+      var laneWidth = columnWidth / event.clusterLaneCount;
+      var top = (minutesFromStart / (totalHours * 60)) * timedHeight;
+      var height = Math.max(18, (durationMinutes / (totalHours * 60)) * timedHeight - 2);
+      var eventNode = createDiv('calendar-event' + (event.past ? ' is-past' : ''));
+      var compact = height < 32;
+      var eventTime = compact ? null : createDiv('calendar-event-time', formatTime(event.start));
+      var eventContent = createDiv(
+        'calendar-event-content' + (compact ? ' calendar-event-content--compact' : ''),
+        compact ? (formatTime(event.start) + ' ' + event.summary) : event.summary
+      );
+
+      eventNode.style.left = 'calc(' + ((dayIndexForEvent * columnWidth) + (event.lane * laneWidth)) + '% + 1px)';
+      eventNode.style.top = Math.max(0, top + 1) + 'px';
+      eventNode.style.width = 'calc(' + laneWidth + '% - 4px)';
+      eventNode.style.height = height + 'px';
+      if (eventTime) {
+        eventNode.appendChild(eventTime);
+      }
+      eventNode.appendChild(eventContent);
+      eventsLayer.appendChild(eventNode);
+    });
+
+    if (stripEvents.length === 0 && allTimed.length === 0) {
+      emptyState.classList.remove('hidden');
+    }
+  });
+</script>
