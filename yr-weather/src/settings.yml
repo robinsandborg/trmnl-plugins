@@ -1,0 +1,25 @@
+# https://docs.trmnl.com/go/plugins/custom-form-fields
+# https://docs.trmnl.com/go/plugins/private
+
+name: Yr Vær
+id: yr-weather
+strategy: polling
+polling_verb: get
+polling_url: 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat={{ latitude }}&lon={{ longitude }}'
+polling_headers: 'User-Agent=yr-weather-trmnl/1.0 (github.com/robinsandborg/trmnl-plugins)'
+refresh_interval: 30
+no_screen_padding: 'yes'
+dark_mode: 'no'
+static_data: ''
+
+custom_fields:
+  - keyname: latitude
+    field_type: text
+    name: Breddegrad
+    description: Breddegrad for værvarselet (f.eks. 59.91 for Oslo).
+    default: '59.91'
+  - keyname: longitude
+    field_type: text
+    name: Lengdegrad
+    description: Lengdegrad for værvarselet (f.eks. 10.75 for Oslo).
+    default: '10.75'

@@ -1,0 +1,7 @@
+[     102ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6
+[     103ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[     178ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   17339ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   17449ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   21236ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   22253ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6

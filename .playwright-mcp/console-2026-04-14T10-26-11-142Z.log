@@ -1,0 +1,17 @@
+[     310ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6
+[     315ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/favicon.ico:0
+[     902ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[    1292ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  178791ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[  178949ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  178959ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-day-cloudy.svg:0
+[  178960ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-night-clear.svg:0
+[  178962ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-strong-wind.svg:0
+[  178963ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-cloudy.svg:0
+[  178967ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-day-cloudy-high.svg:0
+[  178969ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-showers.svg:0
+[  178969ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-day-sprinkle.svg:0
+[  178971ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-night-alt-cloudy.svg:0
+[  179180ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4567/render/icons/wi-rain.svg:0
+[  192785ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  193795ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6

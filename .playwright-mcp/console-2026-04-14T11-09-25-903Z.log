@@ -1,0 +1,3 @@
+[     109ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[     120ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[     254ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6

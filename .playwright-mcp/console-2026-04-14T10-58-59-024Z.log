@@ -1,0 +1,14 @@
+[     204ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[     381ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6
+[     744ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  156264ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[  156390ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  162391ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[  162435ms] ReferenceError: precipExtra is not defined
+    at HTMLDocument.<anonymous> (http://localhost:4567/render/full.html?screen_classes=screen%20screen--1bit%20screen--ogv2%20screen--md%20screen--1x:395:15)
+[  171088ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[  171156ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  187005ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[  187197ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[  190325ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  191338ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6

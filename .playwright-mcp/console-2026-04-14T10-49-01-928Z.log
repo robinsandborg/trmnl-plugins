@@ -1,0 +1,469 @@
+[     116ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6
+[     116ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[     150ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   12850ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   12958ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   30072ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   30117ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   30831ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   30869ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   31480ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   31517ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   32451ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   32488ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   33250ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   33288ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   33749ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   33789ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   34265ms] [LOG] [TRMNL] Build: plugin-render/plugins.js DEV-2026-04-02-mashup @ https://trmnl.com/js/latest/plugins.js:1
+[   34306ms] [WARNING] Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module. @ https://trmnl.com/js/highcharts/12.3.0/highcharts.js:8
+[   38832ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   39838ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   39839ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   40840ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   40840ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   41844ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   41844ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   42848ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   42849ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   43851ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   43851ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   44854ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   44855ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   45859ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   45859ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   46862ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   46862ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   47864ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   47865ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   48866ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   48866ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   49869ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   49869ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   50873ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   50873ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   51876ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   51876ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   52880ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   52881ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   53883ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   53884ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   54887ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   54887ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   55889ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   55889ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   56894ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   56894ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   57898ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   57898ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   58903ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   58903ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   59907ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   59907ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   60910ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   60910ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   61917ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   61917ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   62923ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   62923ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   63930ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   63930ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   64938ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   64939ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   65945ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   65945ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   66951ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   66951ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   67956ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   67956ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   68965ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   68965ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   69972ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   69972ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   70985ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   70985ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   71989ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   71989ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   73000ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   73000ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   74013ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   74013ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   75026ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   75027ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   76036ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   76036ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   77055ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   77055ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   78067ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   78067ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   79088ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   79088ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   80119ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   80119ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   81156ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   81156ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   82189ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   82189ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   83226ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   83226ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   84257ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   84257ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   85317ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   85317ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   86346ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   86346ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   87369ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   87369ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   88448ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   88448ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   89504ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   89504ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   90661ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   90662ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   91799ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   91800ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   92864ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   92864ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   94013ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   94014ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   95141ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   95141ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   96454ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   96454ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   97732ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   97733ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[   98885ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[   98885ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  100072ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  100072ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  101386ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  101386ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  102755ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  102755ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  103993ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  103993ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  105180ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  105180ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  106592ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  106592ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  108016ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  108016ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  109344ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  109344ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  110776ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  110776ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  112656ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  112656ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  114111ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  114112ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  115781ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  115781ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  119227ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  119227ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  121819ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  121819ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  124778ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  124778ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  127712ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  127712ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  130933ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  130934ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  135164ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  135164ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  140014ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  140015ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  144123ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  144123ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  146988ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  146988ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  149141ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  149141ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  154333ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  154333ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  157553ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  157553ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  159883ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  159884ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  165324ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  165325ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  171231ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  171231ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  176120ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  176120ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  179606ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  179606ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  182310ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  182311ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  183314ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  183315ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  184318ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  184318ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  185321ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  185322ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  186324ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  186324ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  187329ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  187329ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  188338ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  188338ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  189350ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  189350ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  190362ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  190362ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  191391ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  191391ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  192443ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  192444ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  193526ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  193526ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  194723ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  194723ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  196304ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  196305ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  197904ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  197905ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  200953ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  200954ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  204284ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  204284ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  207109ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  207109ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  209423ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  209423ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  212443ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  212443ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  214537ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  214537ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  219552ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  219553ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  224406ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  224407ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  228621ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  228621ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  230902ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  230902ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  236264ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  236265ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  240379ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  240379ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  243918ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  243918ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  246666ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  246666ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  249802ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  249802ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  254590ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  254590ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  260204ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  260205ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  263123ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  263123ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  266682ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  266682ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  269007ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  269007ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  271258ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  271258ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  275092ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  275092ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  277608ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  277608ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  281932ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  281932ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  284051ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  284052ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  289161ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  289162ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  293269ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  293269ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  299210ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  299210ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  304676ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  304676ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  308455ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  308455ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  313078ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  313078ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  317830ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  317830ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  323027ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  323027ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  327289ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  327289ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  330570ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  330570ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  335104ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  335105ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  337802ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  337802ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  339900ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  339900ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  343068ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  343069ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  348064ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  348064ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  351698ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  351698ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  357166ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  357167ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  359619ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  359619ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  365490ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  365490ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  370259ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  370260ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  372806ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  372806ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  378287ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  378288ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  381927ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  381927ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  384806ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  384807ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  388848ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  388848ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  392077ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  392077ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  395065ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  395065ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  397838ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  397838ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  401175ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  401175ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  404515ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  404515ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  408482ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  408482ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  412982ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  412983ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  416370ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  416370ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  418654ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  418654ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  422598ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  422598ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  423600ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  423601ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  424604ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  424604ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  425608ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  425608ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  426611ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  426611ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  427615ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  427615ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  428619ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  428620ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  429627ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  429627ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  430638ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  430638ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  431671ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  431671ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  432701ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  432701ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  433762ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  433762ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  435057ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  435057ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  436540ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  436540ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  438616ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  438616ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  441543ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  441543ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  445908ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  445908ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  448601ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  448601ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  450626ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  450626ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  455576ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  455576ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  459835ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  459835ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  465051ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  465052ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  470786ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  470786ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  474503ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  474504ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  478936ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  478936ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  483798ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  483798ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  487306ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  487306ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  492844ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  492845ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  498538ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  498539ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  501672ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  501672ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  503722ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  503722ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  509549ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  509549ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  514099ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  514099ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  517981ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  517981ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  522888ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  522888ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  525573ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  525573ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  528098ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  528099ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  533197ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  533198ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  537614ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  537614ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  543071ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  543072ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  544074ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  544074ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  545077ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  545077ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  546079ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  546079ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  547082ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  547083ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  548086ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  548087ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  549093ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  549093ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  550108ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  550108ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  551124ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  551124ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  552148ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  552148ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  553181ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  553182ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  554230ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  554230ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  555299ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  555299ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  556674ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  556674ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  558170ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  558170ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  559950ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  559950ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  563739ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  563739ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  567944ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  567944ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  571714ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  571714ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  577573ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  577573ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  582658ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  582658ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  585277ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  585278ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  588838ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  588839ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  591227ms] [ERROR] WebSocket connection to 'ws://localhost:4567/live_reload' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4567/index.js:3
+[  591227ms] [LOG] Reconnecting to live reload socket... @ http://localhost:4567/index.js:20
+[  596615ms] [LOG] Connected to live reload socket @ http://localhost:4567/index.js:6

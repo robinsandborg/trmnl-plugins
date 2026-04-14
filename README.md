@@ -34,6 +34,7 @@ Each widget lives in its own directory and is intended to be self-contained.
 |---|---|---|
 | [`google-calendar-week`](./google-calendar-week) | active | Weekly Google Calendar view for LaraPaper using a private iCal feed |
 | [`posthog-analytics`](./posthog-analytics) | active | PostHog analytics dashboards for e-ink displays |
+| [`yr-weather`](./yr-weather) | active | Norwegian weather forecast from MET.no with hourly chart |
 
 ## How This Repo Fits Together
 
