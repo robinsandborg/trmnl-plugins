@@ -17,9 +17,13 @@ custom_fields:
     field_type: text
     name: Breddegrad
     description: Breddegrad for værvarselet (f.eks. 59.91 for Oslo).
-    default: '59.91'
+    default: '60.3685'
   - keyname: longitude
     field_type: text
     name: Lengdegrad
-    description: Lengdegrad for værvarselet (f.eks. 10.75 for Oslo).
-    default: '10.75'
+    description: Lengdegrad for værvarselet (f.eks. 5.3717 for Bergen).
+    default: '5.3717'
+  - keyname: openrouter_api_key
+    field_type: text
+    name: OpenRouter API-nøkkel
+    description: API-nøkkel fra openrouter.ai for klestips.
