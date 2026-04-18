@@ -107,7 +107,7 @@
     transform: translateY(-50%);
     font-size: 11px;
     line-height: 1;
-    color: rgba(0, 0, 0, 0.78);
+    color: #000;
     white-space: nowrap;
     text-align: right;
   }
@@ -142,9 +142,10 @@
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.01em;
-    border-left: 1px solid rgba(0, 0, 0, 0.18);
-    background: rgba(0, 0, 0, 0.02);
+    border-left: 1px solid #000;
+    background: #fff;
     white-space: nowrap;
+    color: #000;
   }
 
   .calendar-header-cell:first-child {
@@ -152,34 +153,27 @@
   }
 
   .calendar-header-cell.is-today {
-    background: rgba(0, 0, 0, 0.08);
+    background: #000;
+    color: #fff;
   }
 
   .calendar-header-cell.is-past {
-    color: rgba(0, 0, 0, 0.45);
+    color: #000;
+    font-weight: 400;
+    font-style: italic;
   }
 
   .calendar-all-day {
     position: relative;
     min-height: 24px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
-
-  .calendar-all-day::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to right, transparent calc(100% - 1px), rgba(0, 0, 0, 0.18) calc(100% - 1px));
-    opacity: 0.18;
-    pointer-events: none;
+    border-bottom: 1px solid #000;
   }
 
   .calendar-all-day-past {
     position: absolute;
     top: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.04);
+    background-image: repeating-linear-gradient(135deg, #000 0, #000 1px, transparent 1px, transparent 6px);
     pointer-events: none;
   }
 
@@ -202,12 +196,12 @@
     position: absolute;
     left: 0;
     right: 0;
-    border-top: 1px dotted rgba(0, 0, 0, 0.34);
+    border-top: 1px dashed #000;
   }
 
   .calendar-column {
     position: relative;
-    border-left: 1px solid rgba(0, 0, 0, 0.18);
+    border-left: 1px solid #000;
   }
 
   .calendar-column:first-child {
@@ -215,19 +209,19 @@
   }
 
   .calendar-column.is-past {
-    background: rgba(0, 0, 0, 0.04);
+    background-image: repeating-linear-gradient(135deg, #000 0, #000 1px, transparent 1px, transparent 8px);
   }
 
   .calendar-column.is-today {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.04), transparent 28%);
+    box-shadow: inset 0 3px 0 0 #000;
   }
 
   .calendar-event,
   .calendar-strip-event {
     position: absolute;
-    border: 1px solid #111;
-    border-radius: 4px;
-    background: #111;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background: #000;
     color: #fff;
     box-sizing: border-box;
     overflow: hidden;
@@ -242,19 +236,18 @@
   }
 
   .calendar-event {
-    min-height: 14px;
-    padding: 3px 4px 2px;
-    font-size: 11px;
-    line-height: 1.15;
+    min-height: 18px;
+    padding: 4px 5px 3px;
+    font-size: 13px;
+    line-height: 1.2;
   }
 
   .calendar-event-time {
     display: block;
     margin-bottom: 2px;
-    font-size: 9px;
+    font-size: 11px;
     line-height: 1;
     letter-spacing: 0.02em;
-    opacity: 0.9;
   }
 
   .calendar-event-content {
@@ -269,16 +262,17 @@
 
   .calendar-event.is-past,
   .calendar-strip-event.is-past {
-    background: rgba(0, 0, 0, 0.45);
-    border-color: rgba(0, 0, 0, 0.52);
+    background: #fff;
+    color: #000;
+    border: 1px dashed #000;
   }
 
   .calendar-strip-event {
     display: flex;
     align-items: center;
-    min-height: 18px;
-    padding: 0 6px;
-    font-size: 13px;
+    min-height: 22px;
+    padding: 0 8px;
+    font-size: 15px;
     line-height: 1;
   }
 
@@ -294,9 +288,9 @@
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.58);
-    background: rgba(255, 255, 255, 0.78);
+    font-weight: 700;
+    color: #000;
+    background: #fff;
   }
 
   .calendar-empty.hidden {
@@ -576,9 +570,9 @@
       });
 
     var stripLaneCount = assignStripLanes(stripEvents);
-    var stripLaneHeight = 20;
+    var stripLaneHeight = 24;
     var stripInset = 2;
-    var stripHeight = 18;
+    var stripHeight = 22;
     var allDayHeight = Math.max(22, stripLaneCount * stripLaneHeight + (stripInset * 2));
     allDayLayer.style.height = allDayHeight + 'px';
     allDaySpacer.style.height = allDayHeight + 'px';
@@ -669,7 +663,7 @@
       var top = (minutesFromStart / (totalHours * 60)) * timedHeight;
       var height = Math.max(18, (durationMinutes / (totalHours * 60)) * timedHeight - 2);
       var eventNode = createDiv('calendar-event' + (event.past ? ' is-past' : ''));
-      var compact = height < 32;
+      var compact = height < 38;
       var eventTime = compact ? null : createDiv('calendar-event-time', formatTime(event.start));
       var eventContent = createDiv(
         'calendar-event-content' + (compact ? ' calendar-event-content--compact' : ''),
