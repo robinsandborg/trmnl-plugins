@@ -1,0 +1,655 @@
+<div class="view view--{{ size }} agenda-view">
+  <div class="layout layout--col agenda-layout">
+    <div class="agenda-shell">
+      <header class="agenda-head">
+        <div class="mini-cal" id="mini-cal" aria-hidden="true"></div>
+      </header>
+
+      <section class="agenda-body">
+        <div class="agenda-columns" id="agenda-columns"></div>
+        <div class="agenda-empty hidden" id="agenda-empty">Ingen avtaler fremover</div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<style>
+  .agenda-view {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  /*
+    All sizes are em-relative. The .agenda-view's font-size is set in JS from
+    the measured .screen dimensions so the whole plugin scales to fit whatever
+    canvas the host hands us (800x480, 992x744, 1175x1550, …).
+    Base: 1em = 16px at the 800-px-wide reference design.
+  */
+
+  /*
+    Break out of the framework's fixed-size .view--full wrapper and fill the
+    real viewport. The wrapper constrains to 800x480 by default, which becomes
+    a tiny box on large e-ink displays (reMarkable, big waveshare, etc.).
+    position:fixed pins to the iframe viewport directly.
+  */
+  .agenda-view {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    color: #000;
+    font-size: 16px; /* overridden in JS */
+  }
+
+  .agenda-layout {
+    width: 100%;
+    height: 100%;
+    padding: 0.875em 1em;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .agenda-shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    gap: 1em;
+  }
+
+  .agenda-head {
+    padding-bottom: 0.875em;
+    border-bottom: 0.0625em solid #000;
+  }
+
+  .mini-cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 0.375em;
+    column-gap: 0;
+  }
+
+  .mini-weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-bottom: 0.4em;
+    color: #000;
+  }
+
+  .mini-day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.15em;
+    padding-top: 0.0625em;
+    min-height: 2.3em;
+    font-size: 1.125em;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .mini-day-circle-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.45em;
+    height: 1.45em;
+  }
+
+  .mini-day-number {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mini-day.is-past .mini-day-number {
+    font-weight: 400;
+    color: #888;
+  }
+
+  .mini-day.is-today .mini-day-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.55em;
+    height: 1.55em;
+    background: #000;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .mini-day.is-today .mini-day-number {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .mini-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2em;
+    height: 0.4em;
+  }
+
+  .mini-dot {
+    width: 0.2em;
+    height: 0.2em;
+    border-radius: 50%;
+    background: #000;
+  }
+
+  .mini-day.is-past .mini-dot {
+    background: #888;
+  }
+
+  .agenda-body {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .agenda-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .agenda-column {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.875em;
+    min-height: 0;
+    overflow: hidden;
+    border-left: 0.0625em dashed #000;
+  }
+
+  .agenda-column:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .agenda-column:last-child {
+    padding-right: 0;
+  }
+
+  .day-block {
+    display: flex;
+    flex-direction: column;
+    padding: 0.875em 0 1em 0;
+    border-top: 0.0625em solid #000;
+  }
+
+  .day-block:first-child {
+    border-top: 0;
+    padding-top: 0.125em;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin-bottom: 0.625em;
+  }
+
+  .day-weekday {
+    font-size: 1.0625em;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    line-height: 1;
+  }
+
+  .day-date {
+    font-size: 0.875em;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #000;
+    line-height: 1;
+  }
+
+  .day-today-pill {
+    margin-left: auto;
+    padding: 0.125em 0.55em 0.2em 0.55em;
+    background: #000;
+    color: #fff;
+    font-size: 0.625em;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    line-height: 1;
+  }
+
+  .agenda-event {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0 0.125em 0;
+  }
+
+  .day-block .agenda-event:first-of-type {
+    padding-top: 0;
+  }
+
+  .event-time {
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.2em;
+    color: #000;
+    opacity: 0.75;
+  }
+
+  .event-summary {
+    font-size: 0.9375em;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .agenda-event.is-past .event-time {
+    opacity: 0.5;
+  }
+
+  .agenda-event.is-past .event-summary {
+    color: #888;
+    font-weight: 400;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.0625em;
+  }
+
+  .agenda-event.is-allday .event-time {
+    letter-spacing: 0.1em;
+  }
+
+  .day-more {
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 0.35em;
+    color: #000;
+    opacity: 0.6;
+  }
+
+  .agenda-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125em;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .agenda-empty.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rawEvents = {{ data.ical | json }} || [];
+    var trmnlContext = {{ trmnl | json }};
+    var daysAheadRaw = {{ agenda_days_ahead | default: 14 | json }};
+    var daysAhead = parseInt(daysAheadRaw, 10);
+    if (!Number.isFinite(daysAhead) || daysAhead < 2) {
+      daysAhead = 14;
+    }
+
+    var weekdayShort = ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør', 'Søn'];
+    var weekdayLong = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
+    var dayMs = 24 * 60 * 60 * 1000;
+    var maxDots = 3;
+    var maxColumns = 3;
+
+    var agendaView = document.querySelector('.agenda-view');
+    var miniCal = document.getElementById('mini-cal');
+    var columnsWrap = document.getElementById('agenda-columns');
+    var emptyState = document.getElementById('agenda-empty');
+
+    // Scale the whole plugin to the actual canvas. All CSS is em-relative, so
+    // setting font-size here cascades to every size, gap and border in the
+    // design. Reference design is 800 px wide; larger canvases (Kindle Scribe,
+    // reMarkable, etc.) scale up proportionally.
+    (function applyScale() {
+      var screenEl = document.querySelector('.screen');
+      var hostWidth = (screenEl ? screenEl.clientWidth : 0) || window.innerWidth || 800;
+      var hostHeight = (screenEl ? screenEl.clientHeight : 0) || window.innerHeight || 480;
+      var widthScale = hostWidth / 800;
+      var heightScale = hostHeight / 480;
+      var scale = Math.min(widthScale, heightScale);
+      // On portrait canvases, height alone would starve the type. Use the
+      // width-scale as a floor so text stays readable at the expense of denser
+      // agenda columns.
+      if (hostHeight > hostWidth) {
+        scale = Math.min(widthScale, (widthScale + heightScale) / 2);
+      }
+      scale = Math.max(0.85, Math.min(scale, 3));
+      agendaView.style.fontSize = (16 * scale) + 'px';
+    })();
+
+    var timestampUtc = trmnlContext && trmnlContext.system ? Number(trmnlContext.system.timestamp_utc) : NaN;
+    var now = Number.isFinite(timestampUtc) ? new Date(timestampUtc * 1000) : new Date();
+
+    function startOfDay(date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    }
+
+    function addDays(date, days) {
+      var copy = new Date(date.getTime());
+      copy.setDate(copy.getDate() + days);
+      return copy;
+    }
+
+    function mondayOf(date) {
+      var base = startOfDay(date);
+      var weekday = base.getDay();
+      var diff = weekday === 0 ? -6 : 1 - weekday;
+      return addDays(base, diff);
+    }
+
+    function weekdayIndexMon(date) {
+      var d = date.getDay();
+      return d === 0 ? 6 : d - 1;
+    }
+
+    function isNearMidnight(date) {
+      return (date.getHours() * 60 + date.getMinutes()) <= 120;
+    }
+
+    function isWholeDayDuration(start, end) {
+      var diff = end.getTime() - start.getTime();
+      return diff >= dayMs && diff % dayMs === 0;
+    }
+
+    function formatTime(date) {
+      var h = date.getHours();
+      var m = date.getMinutes();
+      return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m;
+    }
+
+    function clearNode(node) {
+      while (node.firstChild) {
+        node.removeChild(node.firstChild);
+      }
+    }
+
+    function createEl(tag, className, text) {
+      var el = document.createElement(tag);
+      if (className) el.className = className;
+      if (typeof text === 'string') el.textContent = text;
+      return el;
+    }
+
+    function normalizeEvent(raw, index) {
+      if (!raw || !raw.DTSTART) return null;
+      var start = new Date(raw.DTSTART);
+      var end = raw.DTEND ? new Date(raw.DTEND) : new Date(start.getTime() + 60 * 60 * 1000);
+      if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
+      if (end.getTime() <= start.getTime()) {
+        end = new Date(start.getTime() + 30 * 60 * 1000);
+      }
+      var visibleEnd = new Date(end.getTime() - 1);
+      var allDay = isWholeDayDuration(start, end) && isNearMidnight(start) && isNearMidnight(end);
+      return {
+        id: 'evt-' + index,
+        summary: (raw.SUMMARY || 'Uten tittel').toString(),
+        start: start,
+        end: end,
+        visibleEnd: visibleEnd,
+        allDay: allDay
+      };
+    }
+
+    function dayKey(date) {
+      return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
+    var todayStart = startOfDay(now);
+    var windowStart = todayStart;
+    var windowEnd = addDays(todayStart, daysAhead);
+    var miniStart = mondayOf(now);
+    var miniEnd = addDays(miniStart, 14);
+
+    var events = (Array.isArray(rawEvents) ? rawEvents : [])
+      .map(normalizeEvent)
+      .filter(function(event) {
+        return event && event.start.getTime() < miniEnd.getTime() && event.end.getTime() > miniStart.getTime();
+      })
+      .sort(function(a, b) { return a.start.getTime() - b.start.getTime(); });
+
+    // --- mini calendar ---
+    var countsByDay = {};
+    function bumpCount(date) {
+      var key = dayKey(date);
+      countsByDay[key] = (countsByDay[key] || 0) + 1;
+    }
+
+    events.forEach(function(event) {
+      var startD = startOfDay(event.start);
+      var endD = startOfDay(event.visibleEnd);
+      var cursor = startD.getTime() < miniStart.getTime() ? new Date(miniStart) : new Date(startD);
+      var limit = endD.getTime() >= miniEnd.getTime() ? new Date(miniEnd.getTime() - 1) : new Date(endD);
+      while (cursor.getTime() <= limit.getTime()) {
+        bumpCount(cursor);
+        cursor = addDays(cursor, 1);
+      }
+    });
+
+    clearNode(miniCal);
+    for (var wi = 0; wi < 7; wi += 1) {
+      miniCal.appendChild(createEl('div', 'mini-weekday', weekdayShort[wi]));
+    }
+
+    for (var dayIndex = 0; dayIndex < 14; dayIndex += 1) {
+      var cellDate = addDays(miniStart, dayIndex);
+      var cell = createEl('div', 'mini-day');
+      var isToday = cellDate.getTime() === todayStart.getTime();
+      var isPast = cellDate.getTime() < todayStart.getTime();
+      if (isToday) cell.classList.add('is-today');
+      else if (isPast) cell.classList.add('is-past');
+
+      var numberWrap = createEl('div', 'mini-day-circle-wrap');
+      if (isToday) numberWrap.appendChild(createEl('div', 'mini-day-circle'));
+      numberWrap.appendChild(createEl('span', 'mini-day-number', String(cellDate.getDate())));
+      cell.appendChild(numberWrap);
+
+      var dots = createEl('div', 'mini-dots');
+      var count = countsByDay[dayKey(cellDate)] || 0;
+      var shown = Math.min(count, maxDots);
+      for (var di = 0; di < shown; di += 1) {
+        dots.appendChild(createEl('span', 'mini-dot'));
+      }
+      cell.appendChild(dots);
+      miniCal.appendChild(cell);
+    }
+
+    // --- agenda columns ---
+    var dayBuckets = [];
+    var dayBucketIndex = {};
+
+    function bucketFor(dayStart) {
+      var key = dayKey(dayStart);
+      if (dayBucketIndex[key] !== undefined) return dayBuckets[dayBucketIndex[key]];
+      var bucket = { date: dayStart, events: [] };
+      dayBucketIndex[key] = dayBuckets.length;
+      dayBuckets.push(bucket);
+      return bucket;
+    }
+
+    events.forEach(function(event) {
+      var startDay = startOfDay(event.start);
+      var lastDay = startOfDay(event.visibleEnd);
+      var firstVisibleDay = startDay.getTime() < windowStart.getTime() ? windowStart : startDay;
+      var lastVisibleDay = lastDay.getTime() >= windowEnd.getTime() ? addDays(windowEnd, -1) : lastDay;
+      if (firstVisibleDay.getTime() > lastVisibleDay.getTime()) return;
+
+      var isPastEvent = event.end.getTime() <= now.getTime();
+      var cursor = new Date(firstVisibleDay);
+      while (cursor.getTime() <= lastVisibleDay.getTime()) {
+        bucketFor(new Date(cursor)).events.push({
+          source: event,
+          cursorDay: new Date(cursor),
+          isPast: isPastEvent,
+          isAllDayOnThisDay: event.allDay || startOfDay(event.start).getTime() !== startOfDay(event.visibleEnd).getTime()
+        });
+        cursor = addDays(cursor, 1);
+      }
+    });
+
+    // Keep buckets chronological (map preserved insertion order — but events might insert out of order
+    // across multi-day events; resort).
+    dayBuckets.sort(function(a, b) { return a.date.getTime() - b.date.getTime(); });
+
+    // Sort events within each bucket by start time
+    dayBuckets.forEach(function(bucket) {
+      bucket.events.sort(function(a, b) {
+        if (a.isAllDayOnThisDay !== b.isAllDayOnThisDay) return a.isAllDayOnThisDay ? -1 : 1;
+        return a.source.start.getTime() - b.source.start.getTime();
+      });
+    });
+
+    if (dayBuckets.length === 0) {
+      emptyState.classList.remove('hidden');
+      return;
+    }
+
+    // Distribute buckets across up to maxColumns. Pack greedily left-to-right.
+    var columns = [];
+    for (var ci = 0; ci < maxColumns; ci += 1) columns.push([]);
+
+    function renderEventNode(container, ev) {
+      var node = createEl('div', 'agenda-event' + (ev.isPast ? ' is-past' : '') + (ev.isAllDayOnThisDay ? ' is-allday' : ''));
+      var timeText;
+      if (ev.isAllDayOnThisDay) {
+        timeText = 'Hele dagen';
+      } else {
+        var sameDay = startOfDay(ev.source.start).getTime() === startOfDay(ev.source.visibleEnd).getTime();
+        if (sameDay) {
+          timeText = formatTime(ev.source.start) + ' – ' + formatTime(ev.source.end);
+        } else {
+          // timed event rendered on a day it spans — show window inside this day
+          var dayStart = ev.cursorDay;
+          var dayEnd = addDays(dayStart, 1);
+          var visStart = ev.source.start.getTime() < dayStart.getTime() ? null : ev.source.start;
+          var visEnd = ev.source.end.getTime() > dayEnd.getTime() ? null : ev.source.end;
+          if (visStart && visEnd) timeText = formatTime(visStart) + ' – ' + formatTime(visEnd);
+          else if (visStart) timeText = 'Fra ' + formatTime(visStart);
+          else if (visEnd) timeText = 'Til ' + formatTime(visEnd);
+          else timeText = 'Hele dagen';
+        }
+      }
+      node.appendChild(createEl('div', 'event-time', timeText));
+      node.appendChild(createEl('div', 'event-summary', ev.source.summary));
+      container.appendChild(node);
+    }
+
+    function renderDayBlock(column, bucket, isFirst) {
+      var block = createEl('div', 'day-block');
+      var header = createEl('div', 'day-header');
+      var isToday = bucket.date.getTime() === todayStart.getTime();
+      header.appendChild(createEl('span', 'day-weekday', weekdayLong[weekdayIndexMon(bucket.date)]));
+      header.appendChild(createEl('span', 'day-date', bucket.date.getDate() + '.'));
+      if (isToday) header.appendChild(createEl('span', 'day-today-pill', 'I dag'));
+      block.appendChild(header);
+      bucket.events.forEach(function(ev) { renderEventNode(block, ev); });
+      column.appendChild(block);
+    }
+
+    clearNode(columnsWrap);
+    var columnEls = [];
+    for (var ci2 = 0; ci2 < maxColumns; ci2 += 1) {
+      var colEl = createEl('div', 'agenda-column');
+      columnsWrap.appendChild(colEl);
+      columnEls.push(colEl);
+    }
+
+    var agendaHeight = columnsWrap.clientHeight || 320;
+
+    // Measure each day-block's natural height inside a real column, so padding,
+    // line-height and word-wrap all match the actual render.
+    var measureCol = columnEls[0];
+    var blockHeights = dayBuckets.map(function(bucket) {
+      renderDayBlock(measureCol, bucket, true);
+      var node = measureCol.lastChild;
+      var h = node.getBoundingClientRect().height;
+      measureCol.removeChild(node);
+      return h;
+    });
+
+    var totalHeight = blockHeights.reduce(function(a, b) { return a + b; }, 0);
+    // Aim to spread content evenly, but cap by the actual column height.
+    var balancedTarget = Math.min(totalHeight / maxColumns + 20, agendaHeight);
+
+    var colIdx = 0;
+    var colRunningHeight = 0;
+
+    for (var bi = 0; bi < dayBuckets.length; bi += 1) {
+      if (colIdx >= maxColumns) break;
+      var bucket = dayBuckets[bi];
+      var targetCol = columnEls[colIdx];
+      var isFirstInCol = targetCol.children.length === 0;
+      var blockH = blockHeights[bi];
+
+      // Soft break: move to next column when balanced target is reached.
+      if (!isFirstInCol && colIdx < maxColumns - 1 && (colRunningHeight + blockH) > balancedTarget) {
+        colIdx += 1;
+        colRunningHeight = 0;
+        bi -= 1;
+        continue;
+      }
+
+      renderDayBlock(targetCol, bucket, isFirstInCol);
+      colRunningHeight += blockH;
+
+      // Hard overflow: back off last block and move on.
+      if (targetCol.scrollHeight > agendaHeight && !isFirstInCol) {
+        targetCol.removeChild(targetCol.lastChild);
+        colIdx += 1;
+        colRunningHeight = 0;
+        bi -= 1;
+        continue;
+      }
+
+      // Single day taller than column: trim events and add "+ flere".
+      if (targetCol.scrollHeight > agendaHeight && isFirstInCol) {
+        var block = targetCol.lastChild;
+        while (block.children.length > 1 && targetCol.scrollHeight > agendaHeight) {
+          block.removeChild(block.lastChild);
+        }
+        var more = createEl('div', 'day-more', '+ flere');
+        block.appendChild(more);
+        if (targetCol.scrollHeight > agendaHeight) block.removeChild(more);
+        colIdx += 1;
+        colRunningHeight = 0;
+      }
+    }
+  });
+</script>

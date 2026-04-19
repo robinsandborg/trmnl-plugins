@@ -1,0 +1,24 @@
+# Changes to this file will be overwritten by `trmnlp pull`
+# https://docs.trmnl.com/go/plugins/custom-form-fields
+# https://docs.trmnl.com/go/plugins/private
+
+name: Agenda Calendar
+id: agenda-calendar
+strategy: polling
+polling_verb: get
+polling_url: '{{ calendar_ics_url }}'
+refresh_interval: 15
+no_screen_padding: 'yes'
+dark_mode: 'no'
+static_data: ''
+
+custom_fields:
+  - keyname: calendar_ics_url
+    field_type: text
+    name: Google Calendar iCal URL
+    description: Secret iCal URL for the single Google Calendar you want to display.
+  - keyname: agenda_days_ahead
+    field_type: text
+    name: Agenda window (days)
+    description: How many days ahead (including today) to include in the agenda columns.
+    default: '14'

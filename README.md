@@ -32,6 +32,7 @@ Each widget lives in its own directory and is intended to be self-contained.
 
 | Widget | Status | Notes |
 |---|---|---|
+| [`agenda-calendar`](./agenda-calendar) | active | Dense agenda view of a Google Calendar with a two-week mini header |
 | [`google-calendar-week`](./google-calendar-week) | active | Weekly Google Calendar view for LaraPaper using a private iCal feed |
 | [`posthog-analytics`](./posthog-analytics) | active | PostHog analytics dashboards for e-ink displays |
 | [`yr-weather`](./yr-weather) | active | Norwegian weather forecast from MET.no with hourly chart |
@@ -55,12 +56,19 @@ There is no hosted TRMNL dependency in the intended day-to-day workflow for this
 
 ### Preview a widget
 
-Most widget folders are expected to support local preview with [`trmnl_preview`](https://github.com/usetrmnl/trmnl_preview) and a local `.trmnlp.yml`.
-
-Example:
+Widgets preview via [`trmnl_preview`](https://github.com/usetrmnl/trmnlp). The preferred path is the Docker wrapper in `bin/preview`, which keeps Ruby off the host:
 
 ```bash
-cd posthog-analytics
+bin/preview agenda-calendar
+# → http://localhost:4567
+```
+
+The image is built from the root `Dockerfile` on first run (~1 min). The script mounts the chosen widget directory into the container, so local edits hot-reload.
+
+If you already have Ruby and the gem installed locally, the direct form still works:
+
+```bash
+cd agenda-calendar
 trmnlp serve
 ```
 

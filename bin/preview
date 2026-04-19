@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Wrapper around trmnlp_preview that runs inside Docker so no Ruby is needed locally.
+# Usage: bin/preview <widget-directory> [trmnlp-args...]
+#        bin/preview google-calendar-week
+#        bin/preview agenda-calendar serve --bind 0.0.0.0
+#
+# The image is built from the repo-root Dockerfile on first run.
+
+set -eo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+IMAGE="trmnlp-preview"
+CONTAINER="trmnlp-${USER:-anon}"
+
+if [[ $# -lt 1 ]]; then
+  echo "usage: $0 <widget-directory> [trmnlp-args...]" >&2
+  exit 2
+fi
+
+WIDGET_DIR="$1"; shift
+
+if [[ ! -d "$REPO_ROOT/$WIDGET_DIR/src" ]]; then
+  echo "error: $REPO_ROOT/$WIDGET_DIR/src does not exist" >&2
+  exit 1
+fi
+
+if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
+  echo "→ building $IMAGE (one-time, ~1 min)…"
+  docker build -t "$IMAGE" "$REPO_ROOT"
+fi
+
+# Stop any stale container with the same name.
+docker rm -f "$CONTAINER" >/dev/null 2>&1 || true
+
+# Only allocate a TTY when stdin is actually a terminal (e.g. interactive shell).
+tty_flag=()
+if [[ -t 0 && -t 1 ]]; then
+  tty_flag=(-it)
+fi
+
+exec docker run --rm "${tty_flag[@]}" \
+  --name "$CONTAINER" \
+  -p 4567:4567 \
+  -v "$REPO_ROOT/$WIDGET_DIR:/plugin" \
+  "$IMAGE" \
+  ${@:-serve --bind 0.0.0.0}
