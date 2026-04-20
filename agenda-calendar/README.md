@@ -1,5 +1,7 @@
 # Agenda Calendar
 
+![agenda-calendar](./screenshot.png)
+
 A dense, agenda-first TRMNL widget that shows a Google Calendar at a glance. Designed for e-ink devices where a traditional week grid wastes space on empty hours.
 
 Pairs well with, or replaces, the sibling `google-calendar-week` widget when you want to prioritise reading upcoming appointments over seeing time-of-day structure.

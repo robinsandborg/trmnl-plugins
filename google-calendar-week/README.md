@@ -1,5 +1,7 @@
 # Google Calendar Week
 
+![google-calendar-week](./screenshot.png)
+
 A full-screen TRMNL-compatible week view for LaraPaper that reads a single Google Calendar from its private iCal feed and renders the current week from Monday to Sunday.
 
 The widget is designed for a self-hosted LaraPaper setup. It does not depend on TRMNL's hosted Google Calendar integration.

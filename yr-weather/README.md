@@ -1,5 +1,7 @@
 # Yr Vær
 
+![yr-weather](./screenshot.png)
+
 Norwegian weather forecast widget for TRMNL e-ink displays, powered by [MET.no Locationforecast](https://api.met.no/weatherapi/locationforecast/2.0/documentation).
 
 ## What It Shows
