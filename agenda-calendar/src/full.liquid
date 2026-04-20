@@ -408,16 +408,40 @@
       return el;
     }
 
+    // iCal all-day events use DATE-only values (YYYYMMDD or YYYY-MM-DD) with no
+    // time zone. `new Date("2026-04-10")` parses those as UTC midnight, which
+    // shifts into the NEXT local day for any time zone east of UTC — and the
+    // resulting `end - 1ms` lands the event on two buckets. Parse date-only
+    // strings as local midnight so a Google all-day event stays on one day.
+    function parseIcalDate(value) {
+      if (value == null) return null;
+      if (typeof value !== 'string') return new Date(value);
+      var iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+      var compact = /^(\d{4})(\d{2})(\d{2})$/.exec(value);
+      var m = iso || compact;
+      if (m) {
+        return new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+      }
+      return new Date(value);
+    }
+
+    function isDateOnly(value) {
+      if (typeof value !== 'string') return false;
+      return /^\d{4}-?\d{2}-?\d{2}$/.test(value);
+    }
+
     function normalizeEvent(raw, index) {
       if (!raw || !raw.DTSTART) return null;
-      var start = new Date(raw.DTSTART);
-      var end = raw.DTEND ? new Date(raw.DTEND) : new Date(start.getTime() + 60 * 60 * 1000);
+      var start = parseIcalDate(raw.DTSTART);
+      var end = raw.DTEND ? parseIcalDate(raw.DTEND) : new Date(start.getTime() + 60 * 60 * 1000);
       if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
       if (end.getTime() <= start.getTime()) {
         end = new Date(start.getTime() + 30 * 60 * 1000);
       }
       var visibleEnd = new Date(end.getTime() - 1);
-      var allDay = isWholeDayDuration(start, end) && isNearMidnight(start) && isNearMidnight(end);
+      var declaredAllDay = isDateOnly(raw.DTSTART) && (raw.DTEND == null || isDateOnly(raw.DTEND));
+      var allDay = declaredAllDay ||
+        (isWholeDayDuration(start, end) && isNearMidnight(start) && isNearMidnight(end));
       return {
         id: 'evt-' + index,
         summary: (raw.SUMMARY || 'Uten tittel').toString(),
