@@ -1,3 +1,6 @@
 .trmnlp.yml
 .preview-screens/
 .playwright-cli/
+
+# macOS
+.DS_Store
