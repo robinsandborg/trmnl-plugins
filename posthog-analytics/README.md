@@ -1,5 +1,7 @@
 # PostHog Analytics — TRMNL Plugin
 
+![posthog-analytics](./screenshot.png)
+
 A TRMNL e-ink display plugin that shows PostHog analytics:
 
 - **Growth Accounting** — New, returning, resurrecting, and dormant users (weekly, last 90 days)
