@@ -430,17 +430,46 @@
       return /^\d{4}-?\d{2}-?\d{2}$/.test(value);
     }
 
+    function isUtcMidnight(date) {
+      return date.getUTCHours() === 0 &&
+        date.getUTCMinutes() === 0 &&
+        date.getUTCSeconds() === 0 &&
+        date.getUTCMilliseconds() === 0;
+    }
+
+    function toLocalMidnight(date) {
+      return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+    }
+
     function normalizeEvent(raw, index) {
       if (!raw || !raw.DTSTART) return null;
       var start = parseIcalDate(raw.DTSTART);
       var end = raw.DTEND ? parseIcalDate(raw.DTEND) : new Date(start.getTime() + 60 * 60 * 1000);
       if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return null;
+
+      var declaredAllDay = isDateOnly(raw.DTSTART) && (raw.DTEND == null || isDateOnly(raw.DTEND));
+
+      // Some upstreams (LaraPaper's iCal parser, for one) drop the VALUE=DATE
+      // marker and emit all-day events as UTC-midnight ISO strings like
+      // "2026-04-24T00:00:00Z". In time zones east of UTC those land on the
+      // next local day and the event ends up spanning two buckets. If both
+      // endpoints are UTC midnight and the span is a whole number of days,
+      // treat it as date-only and re-anchor to local midnight.
+      var spansWholeUtcDays = raw.DTEND != null &&
+        isUtcMidnight(start) && isUtcMidnight(end) &&
+        (end.getTime() - start.getTime()) > 0 &&
+        (end.getTime() - start.getTime()) % dayMs === 0;
+
+      if (!declaredAllDay && spansWholeUtcDays) {
+        start = toLocalMidnight(start);
+        end = toLocalMidnight(end);
+      }
+
       if (end.getTime() <= start.getTime()) {
         end = new Date(start.getTime() + 30 * 60 * 1000);
       }
       var visibleEnd = new Date(end.getTime() - 1);
-      var declaredAllDay = isDateOnly(raw.DTSTART) && (raw.DTEND == null || isDateOnly(raw.DTEND));
-      var allDay = declaredAllDay ||
+      var allDay = declaredAllDay || spansWholeUtcDays ||
         (isWholeDayDuration(start, end) && isNearMidnight(start) && isNearMidnight(end));
       return {
         id: 'evt-' + index,
